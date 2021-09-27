@@ -15,11 +15,3 @@ for (let i = 0; i < closeBtn.length; i++) {
         modal[i].style.display = "none";
     }
 }
-
-for (let i = 0; i < modal.length; i++) {
-    window.onclick = function(event) {
-        if (event.target == modal[i]) {
-          modal[i].style.display = "none";
-        }
-    } 
-}
