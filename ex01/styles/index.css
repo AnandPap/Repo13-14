@@ -58,3 +58,7 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.button {
+    padding: 1px;
+}

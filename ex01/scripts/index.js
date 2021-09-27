@@ -1,25 +1,25 @@
-var modal = document.getElementById("myModal");
+var modal = document.getElementsByClassName("modal");
 
-var modalBtn = document.getElementById("modalBtn");
+var modalBtn = document.getElementsByClassName("button");
 
-var closeBtn = document.getElementsByClassName("closeBtn")[0];
+var closeBtn = document.getElementsByClassName("closeBtn");
 
-modalBtn.addEventListener("click", openModal);
-
-closeBtn.addEventListener("click", closeModal);
-
-window.addEventListener("click", outsideClick);
-
-function openModal() {
-    modal.style.display = 'block';
+for (let i = 0; i < modalBtn.length; i++) {
+    modalBtn[i].onclick = function() {
+        modal[i].style.display = "block";
+    }
 }
 
-function closeModal() {
-    modal.style.display = 'none';
+for (let i = 0; i < closeBtn.length; i++) {
+    closeBtn[i].onclick = function() {
+        modal[i].style.display = "none";
+    }
 }
 
-function outsideClick(e) {
-    if (e.target == modal) {
-        modal.style.display = 'none';
+for (let i = 0; i < modal.length; i++) {
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal[i].style.display = "none";
+        }
     }
 }
